@@ -9,7 +9,7 @@ describe("Test QRCodeStyling class", () => {
 
   it("The README example should work correctly", done => {
     const expectedQRCodeFile = fs.readFileSync(
-      path.resolve(__dirname, "../assets/test/image_from_readme.png"),
+      path.resolve(__dirname, "../assets/test/image-from-readme.png"),
       "base64"
     );
     const qrCode = new QRCodeStyling({

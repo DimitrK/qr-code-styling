@@ -8,7 +8,7 @@ import drawTypes from "../constants/drawTypes";
 import defaultOptions, { RequiredOptions } from "./QROptions";
 import sanitizeOptions from "../tools/sanitizeOptions";
 import { Extension, QRCode, Options, DownloadOptions } from "../types";
-import qrcode from "qrcode-generator";
+import { qrcode } from "./QRCode";
 
 export default class QRCodeStyling {
   _options: RequiredOptions;

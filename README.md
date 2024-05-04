@@ -93,7 +93,7 @@ type                   |string (`'canvas' 'svg'`)|`canvas`     |The type of the 
 data                   |string                   |             |The date will be encoded to the QR code
 image                  |string                   |             |The image will be copied to the center of the QR code
 margin                 |number                   |`0`          |Margin around canvas
-qrOptions              |object                   |             |Options will be passed to `qrcode-generator` lib
+qrOptions              |object                   |             |Options will be passed to `qrcode` lib
 imageOptions           |object                   |             |Specific image options, details see below
 dotsOptions            |object                   |             |Dots styling options
 cornersSquareOptions   |object                   |             |Square in the corners styling options

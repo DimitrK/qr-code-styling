@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import qrcode from "qrcode-generator";
+import { qrcode } from "./QRCode";
 import QRCanvas from "./QRCanvas";
 import modes from "../constants/modes";
 import mergeDeep from "../tools/merge";
@@ -26,15 +26,15 @@ describe("Test QRCanvas class", () => {
   });
 
   it("Should draw simple qr code", () => {
-    const expectedQRCodeFile = fs.readFileSync(path.resolve(__dirname, "../assets/test/simple_qr.png"), "base64");
+    const expectedQRCodeFile = fs.readFileSync(path.resolve(__dirname, "../assets/test/simple-qr.png"), "base64");
     const canvas = new QRCanvas(defaultOptions);
 
     canvas.drawQR(qr);
     expect(canvas.getCanvas().toDataURL()).toEqual(expect.stringContaining(expectedQRCodeFile));
   });
-  it("Should draw a qr code with image", done => {
+  it("Should draw a qr code with image", (done) => {
     const expectedQRCodeFile = fs.readFileSync(
-      path.resolve(__dirname, "../assets/test/simple_qr_with_image.png"),
+      path.resolve(__dirname, "../assets/test/simple-qr-with-image.png"),
       "base64"
     );
     const canvas = new QRCanvas({
@@ -49,9 +49,9 @@ describe("Test QRCanvas class", () => {
       done();
     });
   });
-  it("Should draw a qr code with image margin", done => {
+  it("Should draw a qr code with image margin", (done) => {
     const expectedQRCodeFile = fs.readFileSync(
-      path.resolve(__dirname, "../assets/test/simple_qr_with_image_margin.png"),
+      path.resolve(__dirname, "../assets/test/simple-qr-with-image-margin.png"),
       "base64"
     );
     const canvas = new QRCanvas({
@@ -70,9 +70,9 @@ describe("Test QRCanvas class", () => {
       done();
     });
   });
-  it("Should draw a qr code with image without dots hiding", done => {
+  it("Should draw a qr code with image without dots hiding", (done) => {
     const expectedQRCodeFile = fs.readFileSync(
-      path.resolve(__dirname, "../assets/test/simple_qr_with_image.png"),
+      path.resolve(__dirname, "../assets/test/simple-qr-with-image.png"),
       "base64"
     );
     const canvas = new QRCanvas({
@@ -93,7 +93,7 @@ describe("Test QRCanvas class", () => {
   });
   it("Should draw a qr code with margin around canvas", () => {
     const expectedQRCodeFile = fs.readFileSync(
-      path.resolve(__dirname, "../assets/test/simple_qr_with_margin_canvas.png"),
+      path.resolve(__dirname, "../assets/test/simple-qr-with-margin-canvas.png"),
       "base64"
     );
     const canvas = new QRCanvas({
